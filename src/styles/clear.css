@@ -55,3 +55,9 @@ button {
 #root {
     height: 100%;
 }
+
+.app {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}

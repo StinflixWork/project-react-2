@@ -1,6 +1,6 @@
 export const themeLight = {
-	backgroundPrimaryColor: '#fffcf2',
-	backgroundSecondaryColor: '#fefae0',
+	backgroundPrimaryColor: '#f1faee',
+	backgroundSecondaryColor: '#eef0f1',
 	textPrimaryColor: '#4a5759'
 }
 

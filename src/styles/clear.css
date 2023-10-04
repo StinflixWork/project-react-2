@@ -56,8 +56,7 @@ button {
     height: 100%;
 }
 
-.app {
-    height: 100%;
-    display: grid;
-    place-items: center;
+body {
+    font-family: Ubuntu, sans-serif;
+    font-size: 18px;
 }

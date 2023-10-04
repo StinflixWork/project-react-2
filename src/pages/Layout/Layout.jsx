@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import Sidebar from '../Sidebar/Sidebar.jsx'
 import Navigation from '../Navigation/Navigation.jsx'
 import { Suspense } from 'react'
+import Loading from '../Loading/Loading.jsx'
 
 const WrapperLayout = styled.div`
 	min-height: 100%;
@@ -16,7 +17,7 @@ const Layout = () => {
 		<WrapperLayout>
 			<Sidebar />
 			<main>
-				<Suspense fallback={<p>Loading...</p>}>
+				<Suspense fallback={<Loading />}>
 					<Navigation />
 				</Suspense>
 			</main>

@@ -12,8 +12,8 @@ const WrapperDashboard = styled.section`
 const DashboardContent = styled.div`
 	display: flex;
 	flex-direction: column;
-	row-gap: 50px;
-	padding: 15px 35px;
+	row-gap: 40px;
+	padding: 15px 35px 30px;
 `
 
 const Dashboard = () => {

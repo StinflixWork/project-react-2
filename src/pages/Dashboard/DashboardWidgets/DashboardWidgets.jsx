@@ -9,13 +9,7 @@ const DashboardWidgetsStyled = styled.div`
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(2, 1fr);
-	gap: 10px;
-
-	div {
-		flex-basis: 50%;
-		height: 250px;
-		border-radius: 20px;
-	}
+	gap: 40px 10px;
 `
 
 const DashboardWidgets = () => {

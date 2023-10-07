@@ -3,6 +3,7 @@ import WidgetWeather from './WidgetWeather/WidgetWeather.jsx'
 import WidgetAir from './WidgetAir/WidgetAir.jsx'
 import WidgetTemperature from './WidgetTemperature/WidgetTemperature.jsx'
 import WidgetWeatherTomorrow from './WidgetWeatherTomorrow/WidgetWeatherTomorrow.jsx'
+import { weatherData } from './widgets.data.jsx'
 
 const DashboardWidgetsStyled = styled.div`
 	flex: auto;
@@ -15,7 +16,7 @@ const DashboardWidgetsStyled = styled.div`
 const DashboardWidgets = () => {
 	return (
 		<DashboardWidgetsStyled>
-			<WidgetWeather />
+			<WidgetWeather weatherData={weatherData.weatherTemp} />
 			<WidgetAir />
 			<WidgetTemperature />
 			<WidgetWeatherTomorrow />

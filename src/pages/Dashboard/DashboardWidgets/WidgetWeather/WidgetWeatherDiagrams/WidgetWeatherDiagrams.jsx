@@ -4,24 +4,27 @@ import WidgetWeatherDiagramsItem from './WidgetWeatherDiagramsItem/WidgetWeather
 const WidgetWeatherDiagramsStyled = styled.div`
 	display: flex;
 	gap: 36px;
+	max-height: 100px;
+	position: relative;
+	z-index: 10;
 `
 
-const WidgetWeatherDiagrams = () => {
+const WidgetWeatherDiagrams = ({ diagramsData }) => {
 	return (
 		<WidgetWeatherDiagramsStyled>
 			<WidgetWeatherDiagramsItem
 				title="Preesure"
-				value="800mb"
+				value={diagramsData.preesure}
 				stylesDiagram={{ bgColor: '#14213d', colorText: '#fff' }}
 			/>
 			<WidgetWeatherDiagramsItem
 				title="Visibility"
-				value="4.3 km"
+				value={diagramsData.visibility}
 				stylesDiagram={{ bgColor: '#fca311', colorText: '#000814' }}
 			/>
 			<WidgetWeatherDiagramsItem
 				title="Humadity"
-				value="87%"
+				value={diagramsData.humadity}
 				stylesDiagram={{ bgColor: '#fff', colorText: '#000814' }}
 			/>
 		</WidgetWeatherDiagramsStyled>

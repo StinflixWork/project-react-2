@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import SidebarLink from './sidebar-link/SidebarLink.jsx'
-import Logo from 'components/logo/Logo.jsx'
+import Logo from 'components/Logo/Logo.jsx'
 import { sidebarLinks } from './links.data.jsx'
 import { BiLogOut } from 'react-icons/bi'
 

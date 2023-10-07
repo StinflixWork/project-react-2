@@ -4,6 +4,8 @@ const WidgetWeatherValueStyled = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: 6px;
+	position: relative;
+	z-index: 10;
 `
 const WidgetWeatherValueTemp = styled.div`
 	display: inline-flex;
@@ -12,7 +14,7 @@ const WidgetWeatherValueTemp = styled.div`
 
 	h2 {
 		font-size: 32px;
-		color: #102f5d;
+		color: #003049;
 	}
 
 	span {
@@ -27,19 +29,20 @@ const WidgetWeatherValueTemp = styled.div`
 const WidgetWeatherValueSky = styled.div`
 	p {
 		font-size: 12px;
-		color: #102f5d;
+		color: #003049;
+		text-transform: capitalize;
 	}
 `
 
-const WidgetWeatherValue = () => {
+const WidgetWeatherValue = ({ tempData }) => {
 	return (
 		<WidgetWeatherValueStyled>
 			<WidgetWeatherValueTemp>
-				<h2>22&deg;C</h2>
-				<span>18&deg;C</span>
+				<h2>{tempData.temp}&deg;C</h2>
+				<span>{tempData.feelLike}&deg;C</span>
 			</WidgetWeatherValueTemp>
 			<WidgetWeatherValueSky>
-				<p>Partly cloudy</p>
+				<p>{tempData.skyConditions}</p>
 			</WidgetWeatherValueSky>
 		</WidgetWeatherValueStyled>
 	)

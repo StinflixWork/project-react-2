@@ -17,7 +17,7 @@ const DashboardWidgets = () => {
 	return (
 		<DashboardWidgetsStyled>
 			<WidgetWeather weatherData={weatherData.weatherTemp} />
-			<WidgetAir />
+			<WidgetAir airData={weatherData.weatherAir} />
 			<WidgetTemperature />
 			<WidgetWeatherTomorrow />
 		</DashboardWidgetsStyled>

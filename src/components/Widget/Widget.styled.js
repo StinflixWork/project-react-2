@@ -1,11 +1,7 @@
 import styled from 'styled-components'
 
 export const WidgetStyled = styled.div`
-	background-image: url(${(props) => props.urlBg});
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	grid-area: 1 / 1 / 2 / 3;
+	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(3, 1fr);
@@ -13,6 +9,10 @@ export const WidgetStyled = styled.div`
 	border-radius: 20px;
 	padding: 25px;
 	position: relative;
+	background-image: url(${(props) => props.urlBg});
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 `
 
 export const WidgetFilter = styled.div`

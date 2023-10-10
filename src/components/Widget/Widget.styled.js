@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const WidgetWeatherStyled = styled.div`
+export const WidgetStyled = styled.div`
 	background-image: url(${(props) => props.urlBg});
 	background-repeat: no-repeat;
 	background-position: center;
@@ -24,34 +24,4 @@ export const WidgetFilter = styled.div`
 	left: 0;
 	backdrop-filter: blur(1.8px);
 	border-radius: 50px;
-`
-export const WidgetWeatherInfoStyled = styled.div`
-	display: flex;
-	column-gap: 15px;
-	position: relative;
-	z-index: 10;
-`
-
-export const WidgetWeatherInfoIcon = styled.div`
-	width: 42px;
-	height: 42px;
-	border-radius: 50%;
-	background-color: #fff;
-
-	display: grid;
-	place-items: center;
-`
-export const WidgetWeatherInfoBody = styled.div`
-	h3 {
-		font-size: 18px;
-		font-weight: 500;
-		color: #ffffff;
-		line-height: 120%;
-	}
-
-	p {
-		color: #fdfdfd;
-		line-height: 120%;
-		font-size: 14px;
-	}
 `

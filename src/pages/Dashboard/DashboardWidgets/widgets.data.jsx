@@ -15,7 +15,8 @@ export const weatherData = {
 		optionsWidget: {
 			title: 'Weather',
 			subtitle: `What's the weather.`,
-			icon: <WiDayCloudy size={26} color="#14213d" />
+			icon: <WiDayCloudy size={26} color="#14213d" />,
+			color: '#f2f2f2'
 		}
 	}
 }

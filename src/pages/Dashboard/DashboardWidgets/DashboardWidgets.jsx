@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import WidgetWeather from './WidgetWeather/WidgetWeather.jsx'
-import WidgetAir from './WidgetAir/WidgetAir.jsx'
-import WidgetTemperature from './WidgetTemperature/WidgetTemperature.jsx'
-import WidgetWeatherTomorrow from './WidgetWeatherTomorrow/WidgetWeatherTomorrow.jsx'
+import WidgetMain from 'components/Widgets/WidgetMain/WidgetMain.jsx'
+import WidgetAir from 'components/Widgets/WidgetAir/WidgetAir.jsx'
+import WidgetTemperature from 'components/Widgets/WidgetTemperature/WidgetTemperature.jsx'
+import WidgetTomorrow from 'components/Widgets/WidgetTomorrow/WidgetTomorrow.jsx'
 import { weatherData } from './widgets.data.jsx'
 
 const DashboardWidgetsStyled = styled.div`
@@ -16,12 +16,10 @@ const DashboardWidgetsStyled = styled.div`
 const DashboardWidgets = () => {
 	return (
 		<DashboardWidgetsStyled>
-			<WidgetWeather weatherData={weatherData.weatherTemp} />
-			<WidgetAir airData={weatherData.weatherAir} />
+			<WidgetMain weatherData={weatherData.widgetMain} />
+			<WidgetAir airData={weatherData.widgetAir} />
 			<WidgetTemperature />
-			<WidgetWeatherTomorrow
-				weatherTomorrowData={weatherData.weatherTomorrow}
-			/>
+			<WidgetTomorrow weatherTomorrowData={weatherData.weatherTomorrow} />
 		</DashboardWidgetsStyled>
 	)
 }

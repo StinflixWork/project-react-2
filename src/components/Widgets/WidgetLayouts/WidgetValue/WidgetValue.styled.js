@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-const WidgetValueStyled = styled.div`
+export const WidgetValueStyled = styled.div`
 	display: flex;
 	flex-direction: column;
 	row-gap: 6px;
 	position: relative;
 	z-index: 10;
 `
-const WidgetValueTemp = styled.div`
+export const WidgetValueInfo = styled.div`
 	display: inline-flex;
 	column-gap: 15px;
 	align-items: center;
@@ -26,25 +26,10 @@ const WidgetValueTemp = styled.div`
 		font-weight: 500;
 	}
 `
-const WidgetValueSky = styled.div`
+export const WidgetValueText = styled.div`
 	p {
 		font-size: 12px;
 		color: ${(props) => props.colorText};
 		text-transform: capitalize;
 	}
 `
-const WidgetAirValue = ({ windData, colorText }) => {
-	return (
-		<WidgetValueStyled>
-			<WidgetValueTemp colorText={colorText}>
-				<h2>{windData.windSpeed}</h2>
-				<span>{windData.windFactor}</span>
-			</WidgetValueTemp>
-			<WidgetValueSky colorText={colorText}>
-				<p>{windData.windDirection}</p>
-			</WidgetValueSky>
-		</WidgetValueStyled>
-	)
-}
-
-export default WidgetAirValue

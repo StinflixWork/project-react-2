@@ -29,14 +29,33 @@ export const DashboardHeaderUserName = styled.div`
 	line-height: 120%;
 
 	p {
-		color: ${(props) => props.theme.textPrimaryColor};
+		color: ${({ theme }) => theme.textColors.text.primary};
 	}
 
 	h1 {
 		font-weight: 500;
-		color: #1f4172;
+		color: ${({ theme }) => theme.textColors.title.primary};
 	}
 `
+
+export const DashboardHeaderPanel = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	button {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 5px 10px;
+		border: 1px solid rgba(242, 242, 242, 0.5);
+		border-radius: 10px;
+
+		font-size: 14px;
+		color: ${({ theme }) => theme.textColors.text.primary};
+	}
+`
+
 export const DashboardHeaderNotification = styled.div`
 	width: 32px;
 	height: 32px;
@@ -46,6 +65,6 @@ export const DashboardHeaderNotification = styled.div`
 	border-radius: 50%;
 
 	svg {
-		color: ${(props) => props.theme.textPrimaryColor};
+		color: ${({ theme }) => theme.textColors.text.primary};
 	}
 `

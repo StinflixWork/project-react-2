@@ -7,7 +7,7 @@ import Loading from '../Loading/Loading.jsx'
 const WrapperLayout = styled.div`
 	min-height: 100%;
 	overflow: clip;
-	background-color: ${(props) => props.theme.backgroundPrimaryColor};
+	background-color: ${({ theme }) => theme.backgroundColors.primary};
 	display: grid;
 	grid-template-columns: 100px 1fr;
 `

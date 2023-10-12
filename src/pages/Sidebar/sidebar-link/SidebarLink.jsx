@@ -13,6 +13,7 @@ const SidebarLinkStyled = styled(NavLink)`
 
 	svg {
 		transition: color 0.5s ease;
+		color: ${({ theme }) => theme.textColors.link.primary};
 	}
 
 	&:hover,
@@ -21,7 +22,7 @@ const SidebarLinkStyled = styled(NavLink)`
 		box-shadow: 2px 6px 10px -3px rgba(0, 0, 0, 0.2);
 
 		svg {
-			color: #fff;
+			color: ${({ theme }) => theme.textColors.link.hover};
 		}
 	}
 `

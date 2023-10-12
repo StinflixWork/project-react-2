@@ -11,12 +11,12 @@ const MonitorHeaderCountryStyled = styled.div`
 		margin-bottom: 8px;
 		font-size: 18px;
 		font-weight: 500;
-		color: #1f4172;
+		color: ${({ theme }) => theme.textColors.title.primary};
 	}
 
 	p {
 		font-size: 16px;
-		color: #4a5759;
+		color: ${({ theme }) => theme.textColors.text.primary};
 	}
 `
 const MonitorHeaderTempStyled = styled.div`

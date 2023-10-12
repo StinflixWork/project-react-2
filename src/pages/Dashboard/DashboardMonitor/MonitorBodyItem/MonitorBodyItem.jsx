@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const MonitorBodyItemStyled = styled.div`
 	padding: 5px 10px;
 	border-radius: 15px;
-	background-color: #fff;
+	background-color: ${({ theme }) => theme.widgetMonitor.background};
 	height: 70px;
 
 	display: flex;
@@ -26,19 +26,19 @@ const MonitorBodyItemIconBodyStyled = styled.div`
 const MonitorBodyItemInfoBodyStyled = styled.div`
 	p {
 		font-size: 14px;
-		color: #4a5759;
+		color: ${({ theme }) => theme.widgetMonitor.textColor};
 	}
 
 	h3 {
 		margin-top: 4px;
 		font-size: 16px;
 		font-weight: 500;
-		color: #1f4172;
+		color: ${({ theme }) => theme.textColors.title.primary};
 	}
 `
 const MonitorBodyItemValueStyled = styled.div`
 	h2 {
-		color: #fb5607;
+		color: ${({ theme }) => theme.widgetMonitor.tempColor};
 		font-weight: 500;
 		font-size: 14px;
 	}

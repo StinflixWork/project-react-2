@@ -1,7 +1,7 @@
 import { ThemeProvider } from 'styled-components'
-import { useSelector } from 'react-redux'
 import { themeDark, themeLight } from './theme.data.js'
 import Layout from './pages/Layout/Layout.jsx'
+import { useSelector } from 'react-redux'
 
 function App() {
 	const { isDarkMode } = useSelector((state) => state.theme)

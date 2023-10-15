@@ -23,7 +23,7 @@ const WrapperSidebar = styled.aside`
 		}
 
 		button {
-			color: ${(props) => props.theme.textPrimaryColor};
+			color: ${({ theme }) => theme.textColors.link.buttonLogout};
 			transition: color 0.3s ease-out;
 
 			&:hover {

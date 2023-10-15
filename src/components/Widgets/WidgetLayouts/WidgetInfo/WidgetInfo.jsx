@@ -3,14 +3,17 @@ import {
 	WidgetInfoIcon,
 	WidgetInfoStyled
 } from './WidgetInfo.styled.js'
+import { WiDayCloudy } from 'react-icons/wi'
 
-const WidgetInfo = ({ widgetInfo, colorText }) => {
+const WidgetInfo = ({ colorText }) => {
 	return (
 		<WidgetInfoStyled>
-			<WidgetInfoIcon>{widgetInfo.icon}</WidgetInfoIcon>
+			<WidgetInfoIcon>
+				<WiDayCloudy size={26} color="#14213d" />
+			</WidgetInfoIcon>
 			<WidgetInfoBody colorText={colorText}>
-				<h3>{widgetInfo.title}</h3>
-				<p>{widgetInfo.subtitle}</p>
+				<h3>Weather</h3>
+				<p>What&apos;s the weather.</p>
 			</WidgetInfoBody>
 		</WidgetInfoStyled>
 	)

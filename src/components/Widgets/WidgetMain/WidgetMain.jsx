@@ -8,6 +8,7 @@ const WrapperWidgetMain = styled.div`
 `
 
 const WidgetMain = ({ weatherData }) => {
+	console.log(weatherData)
 	return (
 		<WrapperWidgetMain>
 			<WidgetWeather

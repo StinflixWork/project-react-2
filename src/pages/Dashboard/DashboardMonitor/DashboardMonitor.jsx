@@ -29,13 +29,13 @@ const MonitorBodyListStyled = styled.div`
 	gap: 15px;
 `
 
-const DashboardMonitor = () => {
+const DashboardMonitor = ({ location, title, temp }) => {
 	const cards = predictionWeatherData.map((d) => (
 		<MonitorBodyItem key={d.day} data={d} />
 	))
 	return (
 		<DashboardMonitorStyled>
-			<MonitorWeatherHeader />
+			<MonitorWeatherHeader location={location} title={title} temp={temp} />
 			<MonitorBodyStyled>
 				<h3>Weather Prediction</h3>
 				<MonitorBodyListStyled>

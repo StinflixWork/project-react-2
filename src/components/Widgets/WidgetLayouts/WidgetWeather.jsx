@@ -9,7 +9,7 @@ const WidgetWeather = ({ children, background, colorText, body }) => {
 	return (
 		<WidgetMainStyled urlBg={background}>
 			<WidgetFilter />
-			<WidgetInfo widgetInfo={body.info} colorText={colorText} />
+			<WidgetInfo colorText={colorText} />
 			<WidgetValue value={body.value} colorText={colorText} />
 			{children}
 		</WidgetMainStyled>

@@ -50,6 +50,7 @@ export const DashboardHeaderPanel = styled.div`
 		padding: 5px 10px;
 		border: 1px solid rgba(242, 242, 242, 0.5);
 		border-radius: 10px;
+		transition: all 0.3s ease-out;
 
 		font-size: 14px;
 		color: ${({ theme }) => theme.textColors.text.primary};

@@ -27,15 +27,17 @@ const MonitorHeaderTempStyled = styled.div`
 	}
 `
 
-const MonitorWeatherHeader = () => {
+const MonitorWeatherHeader = ({ location, title, temp }) => {
 	return (
 		<MonitorHeaderStyled>
 			<MonitorHeaderCountryStyled>
-				<h3>Sun</h3>
-				<p>Ukraine, Alexandria</p>
+				<h3>{title}</h3>
+				<p>
+					{location.country}, {location.city}
+				</p>
 			</MonitorHeaderCountryStyled>
 			<MonitorHeaderTempStyled>
-				<h2>22&deg;C</h2>
+				<h2>{temp}&deg;C</h2>
 			</MonitorHeaderTempStyled>
 		</MonitorHeaderStyled>
 	)

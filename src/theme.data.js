@@ -13,7 +13,8 @@ export const themeLight = {
 		},
 		link: {
 			primary: '#1c1b1b',
-			hover: '#fff'
+			hover: '#fff',
+			buttonLogout: '#748cab'
 		}
 	},
 	widgetMonitor: {
@@ -26,7 +27,7 @@ export const themeLight = {
 export const themeDark = {
 	backgroundColors: {
 		primary: '#1d2d44',
-		secondary: '#0d1321'
+		secondary: 'rgba(13,19,33,0.7)'
 	},
 	textColors: {
 		title: {
@@ -38,7 +39,8 @@ export const themeDark = {
 		},
 		link: {
 			primary: '#fff',
-			hover: '#fff'
+			hover: '#fff',
+			buttonLogout: '#748cab'
 		}
 	},
 	widgetMonitor: {

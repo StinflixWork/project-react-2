@@ -21,6 +21,10 @@ const MonitorBodyItemIconBodyStyled = styled.div`
 	height: 100%;
 	display: grid;
 	place-items: center;
+
+	img {
+		width: 100%;
+	}
 `
 
 const MonitorBodyItemInfoBodyStyled = styled.div`
@@ -31,7 +35,8 @@ const MonitorBodyItemInfoBodyStyled = styled.div`
 
 	h3 {
 		margin-top: 4px;
-		font-size: 16px;
+		font-size: 15px;
+		text-transform: capitalize;
 		font-weight: 500;
 		color: ${({ theme }) => theme.textColors.title.primary};
 	}
@@ -45,20 +50,26 @@ const MonitorBodyItemValueStyled = styled.div`
 `
 
 const MonitorBodyItem = ({ data }) => {
+	const date = new Date(data.date * 1000)
+	const dateFormatter = new Intl.DateTimeFormat('en-EN', {
+		month: 'long',
+		day: 'numeric'
+	})
+
 	return (
 		<MonitorBodyItemStyled>
 			<MonitorBodyItemInfoStyled>
 				<MonitorBodyItemIconBodyStyled>
-					{data.icon}
+					<img src={data.icon} alt="" />
 				</MonitorBodyItemIconBodyStyled>
 				<MonitorBodyItemInfoBodyStyled>
-					<p>{data.day}</p>
-					<h3>{data.weather}</h3>
+					<p>{dateFormatter.format(date)}</p>
+					<h3>{data.condition}</h3>
 				</MonitorBodyItemInfoBodyStyled>
 			</MonitorBodyItemInfoStyled>
 			<MonitorBodyItemValueStyled>
 				<h2>
-					{data.temp}&deg;C / {data.feelLike}&deg;C
+					{Math.round(data.temp)}&deg;C / {Math.round(data.avgTemp)}&deg;C
 				</h2>
 			</MonitorBodyItemValueStyled>
 		</MonitorBodyItemStyled>

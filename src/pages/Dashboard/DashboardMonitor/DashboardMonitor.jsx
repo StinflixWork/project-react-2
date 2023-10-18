@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import MonitorWeatherHeader from './MonitorHeader/MonitorWeatherHeader.jsx'
 import MonitorBodyItem from './MonitorBodyItem/MonitorBodyItem.jsx'
-import { predictionWeatherData } from './predictWeather.data.jsx'
 
 const DashboardMonitorStyled = styled.div`
 	height: 100%;
@@ -29,13 +28,13 @@ const MonitorBodyListStyled = styled.div`
 	gap: 15px;
 `
 
-const DashboardMonitor = ({ location, title, temp }) => {
+const DashboardMonitor = ({ data, predictionWeatherData }) => {
 	const cards = predictionWeatherData.map((d) => (
-		<MonitorBodyItem key={d.day} data={d} />
+		<MonitorBodyItem key={d.id} data={d} />
 	))
 	return (
 		<DashboardMonitorStyled>
-			<MonitorWeatherHeader location={location} title={title} temp={temp} />
+			<MonitorWeatherHeader data={data} />
 			<MonitorBodyStyled>
 				<h3>Weather Prediction</h3>
 				<MonitorBodyListStyled>

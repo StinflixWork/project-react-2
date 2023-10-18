@@ -1,5 +1,4 @@
 import { Line, LineChart, ResponsiveContainer, XAxis } from 'recharts'
-import { temperatureData } from './temperatureData.data.js'
 import styled from 'styled-components'
 
 const WidgetTemperatureChart = styled.div`
@@ -17,7 +16,14 @@ const CustomizedLabel = (props) => {
 	)
 }
 
-const TemperatureChart = () => {
+const TemperatureChart = ({ tempData }) => {
+	const timesDay = ['', 'Morning', 'Afternoon', 'Evening', 'Night']
+	const temperatureData = tempData.map((d, index) => ({
+		uv: index,
+		temp: Math.round(d.tempHour),
+		timeOfDay: timesDay[index]
+	}))
+
 	return (
 		<WidgetTemperatureChart>
 			<ResponsiveContainer width="100%" height="80%">

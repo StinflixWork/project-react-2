@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const WEATHER_API_URL =
-	"http://api.weatherapi.com/v1/current.json?key=b0b565e5afae4bf890782105231310&q=Aleksandriya, Kirovohrads'ka Oblast'&aqi=yes"
+	"http://api.weatherapi.com/v1/forecast.json?key=b0b565e5afae4bf890782105231310&q=Aleksandriya, Kirovohrads'ka Oblast'&days=5&aqi=no"
 
 const initialState = {
 	weatherData: {},
@@ -28,23 +28,26 @@ export const widgetsSlice = createSlice({
 				state.status = 'loading'
 			})
 			.addCase(fetchWeather.fulfilled, (state, action) => {
-				const { location, current } = action.payload
+				const { location, current, forecast } = action.payload
 				state.status = 'succeeded'
 
-				state.weatherData = {
-					location: {
-						country: location.country,
-						city: location.name
-					},
-					body: {
+				const predictionWeatherApiData = forecast.forecastday.map((f) => ({
+					id: f.date_epoch,
+					date: f.date_epoch,
+					temp: f.day.maxtemp_c,
+					avgTemp: f.day.avgtemp_c,
+					condition: f.day.condition.text,
+					icon: f.day.condition.icon
+				}))
+
+				const weatherApiData = {
+					widgetsSection: {
 						widgetMain: {
-							body: {
-								value: {
-									main: Math.round(current.temp_c),
-									optional: Math.round(current.feelslike_c),
-									text: 'Sunny',
-									isTemp: true
-								}
+							value: {
+								main: Math.round(current.temp_c),
+								optional: Math.round(current.feelslike_c),
+								text: current.condition.text,
+								isTemp: true
 							},
 							diagramsData: {
 								preesure: current.pressure_mb + ' mb',
@@ -53,17 +56,54 @@ export const widgetsSlice = createSlice({
 							}
 						},
 						widgetAir: {
-							body: {
-								value: {
-									main: Math.round(current.wind_kph) + ' km/h',
-									optional: current.wind_degree,
-									text: 'Wind direction ' + current.wind_dir,
-									isTemp: false
-								}
+							value: {
+								main: Math.round(current.wind_kph) + ' km/h',
+								optional: current.wind_degree,
+								text: 'Wind direction ' + current.wind_dir,
+								isTemp: false
 							}
-						}
+						},
+						widgetTomorrow: {
+							value: Math.round(forecast.forecastday[0].day.maxtemp_c),
+							text: forecast.forecastday[0].day.condition.text
+						},
+						widgetTempToday: [
+							{
+								hour: 0,
+								tempHour: 0
+							},
+							{
+								hour: forecast.forecastday[0].hour[9].time_epoch,
+								tempHour: forecast.forecastday[0].hour[9].temp_c
+							},
+							{
+								hour: forecast.forecastday[0].hour[12].time_epoch,
+								tempHour: forecast.forecastday[0].hour[12].temp_c
+							},
+							{
+								hour: forecast.forecastday[0].hour[18].time_epoch,
+								tempHour: forecast.forecastday[0].hour[18].temp_c
+							},
+							{
+								hour: forecast.forecastday[0].hour[23].time_epoch,
+								tempHour: forecast.forecastday[0].hour[23].temp_c
+							}
+						]
+					},
+					monitorSection: {
+						location: {
+							country: location.country,
+							city: location.name
+						},
+						temp: {
+							value: Math.round(current.temp_c),
+							text: current.condition.text
+						},
+						prediction: [...predictionWeatherApiData]
 					}
 				}
+
+				state.weatherData = weatherApiData
 			})
 			.addCase(fetchWeather.rejected, (state, action) => {
 				state.status = 'failed'

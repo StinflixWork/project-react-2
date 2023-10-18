@@ -41,12 +41,11 @@ const Dashboard = () => {
 			<>
 				<DashboardContent>
 					<DashboardHeader />
-					<DashboardWidgets data={weatherData.body} />
+					<DashboardWidgets data={weatherData.widgetsSection} />
 				</DashboardContent>
 				<DashboardMonitor
-					location={weatherData.location}
-					title={weatherData.body.widgetMain.body.value.text}
-					temp={weatherData.body.widgetMain.body.value.main}
+					data={weatherData.monitorSection}
+					predictionWeatherData={weatherData.monitorSection.prediction}
 				/>
 			</>
 		)

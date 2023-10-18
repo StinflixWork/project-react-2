@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import WidgetAir from 'components/Widgets/WidgetAir/WidgetAir.jsx'
 import WidgetTemperature from 'components/Widgets/WidgetTemperature/WidgetTemperature.jsx'
 import WidgetTomorrow from 'components/Widgets/WidgetTomorrow/WidgetTomorrow.jsx'
-import { weatherData } from './widgets.data.jsx'
 import WidgetMain from 'components/Widgets/WidgetMain/WidgetMain.jsx'
 
 const DashboardWidgetsStyled = styled.div`
@@ -18,8 +17,8 @@ const DashboardWidgets = ({ data }) => {
 		<DashboardWidgetsStyled>
 			<WidgetMain weatherData={data.widgetMain} />
 			<WidgetAir airData={data.widgetAir} />
-			<WidgetTemperature />
-			<WidgetTomorrow weatherTomorrowData={weatherData.weatherTomorrow} />
+			<WidgetTemperature tempTodayData={data.widgetTempToday} />
+			<WidgetTomorrow weatherTomorrowData={data.widgetTomorrow} />
 		</DashboardWidgetsStyled>
 	)
 }

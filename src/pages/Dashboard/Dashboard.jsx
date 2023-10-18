@@ -12,7 +12,6 @@ const WrapperDashboard = styled.section`
 	display: grid;
 	grid-template-columns: 1fr 350px;
 `
-
 const DashboardContent = styled.div`
 	display: flex;
 	flex-direction: column;

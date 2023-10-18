@@ -40,12 +40,12 @@ export const widgetsSlice = createSlice({
 					icon: f.day.condition.icon
 				}))
 
-				const weatherApiData = {
+				state.weatherData = {
 					widgetsSection: {
 						widgetMain: {
 							value: {
-								main: Math.round(current.temp_c),
-								optional: Math.round(current.feelslike_c),
+								main: current.temp_c,
+								optional: current.feelslike_c,
 								text: current.condition.text,
 								isTemp: true
 							},
@@ -57,14 +57,14 @@ export const widgetsSlice = createSlice({
 						},
 						widgetAir: {
 							value: {
-								main: Math.round(current.wind_kph) + ' km/h',
+								main: current.wind_kph,
 								optional: current.wind_degree,
 								text: 'Wind direction ' + current.wind_dir,
 								isTemp: false
 							}
 						},
 						widgetTomorrow: {
-							value: Math.round(forecast.forecastday[0].day.maxtemp_c),
+							value: forecast.forecastday[0].day.maxtemp_c,
 							text: forecast.forecastday[0].day.condition.text
 						},
 						widgetTempToday: [
@@ -96,14 +96,12 @@ export const widgetsSlice = createSlice({
 							city: location.name
 						},
 						temp: {
-							value: Math.round(current.temp_c),
+							value: current.temp_c,
 							text: current.condition.text
 						},
 						prediction: [...predictionWeatherApiData]
 					}
 				}
-
-				state.weatherData = weatherApiData
 			})
 			.addCase(fetchWeather.rejected, (state, action) => {
 				state.status = 'failed'

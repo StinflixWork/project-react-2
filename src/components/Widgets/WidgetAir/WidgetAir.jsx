@@ -9,6 +9,7 @@ const WrapperWidgetAir = styled.div`
 `
 
 const WidgetAir = ({ airData }) => {
+	console.log(airData)
 	return (
 		<WrapperWidgetAir>
 			<WidgetWeather
@@ -17,7 +18,7 @@ const WidgetAir = ({ airData }) => {
 				body={airData.value}
 				icon={<FiWind size={24} color="#fb8500" />}
 			>
-				<WidgetAirStatistic />
+				<WidgetAirStatistic windKm={airData.value.main} />
 			</WidgetWeather>
 		</WrapperWidgetAir>
 	)

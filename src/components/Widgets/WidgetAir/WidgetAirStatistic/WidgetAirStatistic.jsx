@@ -33,15 +33,15 @@ const WidgetAirStatisticProgress = styled.div`
 	}
 `
 
-const WidgetAirStatistic = () => {
+const WidgetAirStatistic = ({ windKm }) => {
 	return (
 		<WidgetAirStatisticStyled>
 			<WidgetAirStatisticLabel>
-				<p>Good</p>
-				<p>Hazardous</p>
+				<p>No wind</p>
+				<p>Very airy</p>
 			</WidgetAirStatisticLabel>
 			<WidgetAirStatisticProgress>
-				<progress max="800" value="390" />
+				<progress max={35} value={windKm} />
 			</WidgetAirStatisticProgress>
 		</WidgetAirStatisticStyled>
 	)

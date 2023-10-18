@@ -6,15 +6,16 @@ import {
 
 const WidgetValue = ({ value, colorText }) => {
 	const title = value.isTemp ? (
-		<h2>{value.main}&deg;C</h2>
+		<h2>{Math.round(value.main)}&deg;C</h2>
 	) : (
-		<h2>{value.main}</h2>
+		<h2>{Math.round(value.main)}</h2>
 	)
 	const optional = value.isTemp ? (
 		<span>{value.optional}&deg;C</span>
 	) : (
 		<span>{value.optional}</span>
 	)
+
 	return (
 		<WidgetValueStyled>
 			<WidgetValueInfo colorText={colorText}>

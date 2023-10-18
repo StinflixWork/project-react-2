@@ -18,7 +18,7 @@ const WidgetTomorrow = ({ weatherTomorrowData }) => {
 					<h2>Tomorrow</h2>
 				</WidgetTomorrowLabelStyled>
 				<WidgetTomorrowValueStyled>
-					<h3>{weatherTomorrowData.value}&deg;C</h3>
+					<h3>{Math.round(weatherTomorrowData.value)}&deg;C</h3>
 					<p>{weatherTomorrowData.text}</p>
 				</WidgetTomorrowValueStyled>
 			</WidgetTomorrowStyled>

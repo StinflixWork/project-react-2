@@ -37,7 +37,7 @@ const MonitorWeatherHeader = ({ data }) => {
 				</p>
 			</MonitorHeaderCountryStyled>
 			<MonitorHeaderTempStyled>
-				<h2>{data.temp.value}&deg;C</h2>
+				<h2>{Math.round(data.temp.value)}&deg;C</h2>
 			</MonitorHeaderTempStyled>
 		</MonitorHeaderStyled>
 	)

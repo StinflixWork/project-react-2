@@ -14,5 +14,4 @@
 - Axios
 
 API:
-- WeatherApi
-https://www.weatherapi.com/
+- WeatherApi: https://www.weatherapi.com/

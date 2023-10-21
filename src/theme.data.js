@@ -1,7 +1,8 @@
 export const themeLight = {
 	backgroundColors: {
-		primary: '#f1faee',
-		secondary: '#eef0f1'
+		primary: '#fff',
+		secondary: '#eef0f1',
+		widgetsBg: '#f5ebe0'
 	},
 	textColors: {
 		title: {
@@ -9,7 +10,8 @@ export const themeLight = {
 			secondary: '#14213d'
 		},
 		text: {
-			primary: '#4a5759'
+			primary: '#4a5759',
+			secondary: '#0077b6'
 		},
 		link: {
 			primary: '#1c1b1b',
@@ -27,7 +29,8 @@ export const themeLight = {
 export const themeDark = {
 	backgroundColors: {
 		primary: '#1d2d44',
-		secondary: 'rgba(13,19,33,0.7)'
+		secondary: 'rgba(13,19,33,0.7)',
+		widgetsBg: '#003049'
 	},
 	textColors: {
 		title: {
@@ -35,7 +38,8 @@ export const themeDark = {
 			secondary: '#748cab'
 		},
 		text: {
-			primary: '#ccd5ae'
+			primary: '#ccd5ae',
+			secondary: '#0077b6'
 		},
 		link: {
 			primary: '#fff',

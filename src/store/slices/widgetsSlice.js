@@ -52,7 +52,7 @@ export const widgetsSlice = createSlice({
 							diagramsData: {
 								preesure: current.pressure_mb + ' mb',
 								visibility: current.vis_km + ' km',
-								humadity: current.humidity + '%'
+								humidity: current.humidity + '%'
 							}
 						},
 						widgetAir: {

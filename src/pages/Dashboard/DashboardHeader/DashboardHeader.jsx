@@ -1,21 +1,14 @@
-import Avatar from 'assets/dashboard/img/avatar.jpg'
 import { IoNotificationsOutline } from 'react-icons/io5'
-import {
-	DashboardHeaderNotification,
-	DashboardHeaderPanel,
-	DashboardHeaderStyled,
-	DashboardHeaderUser,
-	DashboardHeaderUserAvatar,
-	DashboardHeaderUserName
-} from './DashboardHeader.styled.js'
-import { MdNightsStay } from 'react-icons/md'
+import { DashboardHeaderNotification, DashboardHeaderPanel, DashboardHeaderStyled } from './DashboardHeader.styled.js'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleDarkMode } from 'store/slices/themeSlice.js'
-import { BsFillBrightnessHighFill } from 'react-icons/bs'
 import { useState } from 'react'
+import ButtonDarkMode from 'components/ButtonDarkMode/ButtonDarkMode.jsx'
+import DashboardHeaderUser from './DashboardHeaderUser/DashboardHeaderUser.jsx'
 
 const DashboardHeader = () => {
 	const dispatch = useDispatch()
+	const localTime = useSelector(state => state.weather.weatherData.header.time)
 	const isDark = useSelector((state) => state.isDarkMode)
 	const [darkIcon, setDarkIcon] = useState(isDark)
 
@@ -26,29 +19,9 @@ const DashboardHeader = () => {
 
 	return (
 		<DashboardHeaderStyled>
-			<DashboardHeaderUser>
-				<DashboardHeaderUserAvatar>
-					<img src={Avatar} alt="User Avatar" />
-				</DashboardHeaderUserAvatar>
-				<DashboardHeaderUserName>
-					<p>Hello,</p>
-					<h1>Vlad Podparinov</h1>
-				</DashboardHeaderUserName>
-			</DashboardHeaderUser>
+			<DashboardHeaderUser localTime={localTime} />
 			<DashboardHeaderPanel>
-				<button onClick={handleChangeDarkMode}>
-					{!darkIcon ? (
-						<>
-							Dark Mode
-							<MdNightsStay size={20} color="#fb8500" />
-						</>
-					) : (
-						<>
-							Light Mode
-							<BsFillBrightnessHighFill size={20} color="#fb8500" />
-						</>
-					)}
-				</button>
+				<ButtonDarkMode handleChangeDarkMode={handleChangeDarkMode} darkIcon={darkIcon} />
 				<DashboardHeaderNotification>
 					<IoNotificationsOutline size={20} />
 				</DashboardHeaderNotification>

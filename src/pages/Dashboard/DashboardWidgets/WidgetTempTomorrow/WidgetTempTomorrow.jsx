@@ -1,43 +1,28 @@
 import styled from 'styled-components'
 import { WidgetBlurBg, WidgetStyled } from 'styles/DashboardWidgets.styled.js'
-import WidgetBgImage from 'assets/dashboard/widget-tomorrow/weather-rain.jpg'
+import { WidgetTempTomorrowBody, WidgetTempTomorrowTemp, WidgetTempTomorrowTitle } from './WidgetTempTomorrow.styled.js'
+import SunnyBgImage from 'assets/dashboard/widget-tomorrow/weather-sunny.jpg'
+import RainBgImage from 'assets/dashboard/widget-tomorrow/weather-rain.jpg'
+import CloudyBgImage from 'assets/dashboard/widget-tomorrow/weather-cloudy.jpg'
 
 const WrapperWidgetTempTomorrow = styled.div`
-	grid-area: 2 / 4 / 3 / 5;
+  grid-area: 2 / 4 / 3 / 5;
 `
 
-const WidgetTempTomorrowBody = styled.div`
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-
-	color: #f5f5f5;
-`
-
-const WidgetTempTomorrowTitle = styled.div`
-	p {
-		font-size: 20px;
-		font-weight: 500;
-	}
-`
-const WidgetTempTomorrowTemp = styled.div`
-	text-align: end;
-
-	h2 {
-		font-size: 36px;
-		line-height: 120%;
-	}
-
-	p {
-		font-size: 16px;
-	}
-`
 
 const WidgetTempTomorrow = ({ tempTomorrowData }) => {
+	let backgroundWidget
+	if (tempTomorrowData.text === 'Sunny') {
+		backgroundWidget = SunnyBgImage
+	} else if (tempTomorrowData === 'Patchy rain possible' || tempTomorrowData === 'Moderate rain') {
+		backgroundWidget = RainBgImage
+	} else {
+		backgroundWidget = CloudyBgImage
+	}
+
 	return (
 		<WrapperWidgetTempTomorrow>
-			<WidgetStyled $background={WidgetBgImage}>
+			<WidgetStyled $background={backgroundWidget}>
 				<WidgetBlurBg />
 				<WidgetTempTomorrowBody>
 					<WidgetTempTomorrowTitle>

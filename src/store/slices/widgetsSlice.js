@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 const WEATHER_API_URL =
-	"http://api.weatherapi.com/v1/forecast.json?key=b0b565e5afae4bf890782105231310&q=Aleksandriya, Kirovohrads'ka Oblast'&days=5&aqi=no"
+	'http://api.weatherapi.com/v1/forecast.json?key=b0b565e5afae4bf890782105231310&q=Aleksandriya, Kirovohrads\'ka Oblast\'&days=5&aqi=no'
 
 const initialState = {
 	weatherData: {},
@@ -100,6 +100,9 @@ export const widgetsSlice = createSlice({
 							text: current.condition.text
 						},
 						prediction: [...predictionWeatherApiData]
+					},
+					header: {
+						time: location.localtime.split(' ').pop()
 					}
 				}
 			})

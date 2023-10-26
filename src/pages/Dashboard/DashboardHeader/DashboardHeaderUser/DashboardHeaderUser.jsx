@@ -4,9 +4,9 @@ import {
 	DashboardHeaderUserName,
 	DashboardHeaderUserStyled
 } from './DashboardHeaderUser.styled.js'
-import { getGreetingByTime } from '../../../../services/getGreetingByTime.js'
+import { getGreetingByTime } from '../../../../utils/getGreetingByTime.js'
 
-const DashboardHeaderUser = ({ localTime }) => {
+const DashboardHeaderUser = ({ localTime, username }) => {
 	const greeting = getGreetingByTime(localTime)
 
 	return (
@@ -16,7 +16,7 @@ const DashboardHeaderUser = ({ localTime }) => {
 			</DashboardHeaderUserAvatar>
 			<DashboardHeaderUserName>
 				<p>{greeting},</p>
-				<h1>Vlad Podparinov</h1>
+				<h1>{username || 'User'}</h1>
 			</DashboardHeaderUserName>
 		</DashboardHeaderUserStyled>
 	)

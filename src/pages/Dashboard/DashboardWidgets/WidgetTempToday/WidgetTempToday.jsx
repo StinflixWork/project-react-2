@@ -3,20 +3,21 @@ import { WidgetStyled } from 'styles/DashboardWidgets.styled.js'
 import TempTodayChart from './TempTodayChart/TempTodayChart.jsx'
 
 const WrapperWidgetTempToday = styled.div`
-	grid-area: 2 / 1 / 3 / 4;
+  grid-area: 2 / 1 / 3 / 4;
 `
 
 const WidgetTempTodayContent = styled.div`
-	height: 100%;
-	display: flex;
-	flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 `
 
 const WidgetTempContentTodayTitle = styled.div`
-	h2 {
-		font-size: 24px;
-		color: #023047;
-	}
+  h2 {
+    font-size: 24px;
+    color: ${({ theme }) => theme.textColors.title.secondary};
+  }
 `
 
 const WidgetTempToday = ({ tempTodayData }) => {

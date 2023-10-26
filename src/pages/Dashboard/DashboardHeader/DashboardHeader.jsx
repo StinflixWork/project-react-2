@@ -10,6 +10,7 @@ const DashboardHeader = () => {
 	const dispatch = useDispatch()
 	const localTime = useSelector(state => state.weather.weatherData.header.time)
 	const isDark = useSelector((state) => state.isDarkMode)
+	const { fullName } = useSelector(state => state.auth)
 	const [darkIcon, setDarkIcon] = useState(isDark)
 
 	const handleChangeDarkMode = () => {
@@ -19,7 +20,7 @@ const DashboardHeader = () => {
 
 	return (
 		<DashboardHeaderStyled>
-			<DashboardHeaderUser localTime={localTime} />
+			<DashboardHeaderUser localTime={localTime} username={fullName} />
 			<DashboardHeaderPanel>
 				<ButtonDarkMode handleChangeDarkMode={handleChangeDarkMode} darkIcon={darkIcon} />
 				<DashboardHeaderNotification>

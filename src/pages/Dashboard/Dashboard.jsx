@@ -8,15 +8,15 @@ import DashboardWidgets from './DashboardWidgets/DashboardWidgets.jsx'
 import Loading from '../Loading/Loading.jsx'
 
 const WrapperDashboard = styled.section`
-	height: 100%;
-	display: grid;
-	grid-template-columns: 1fr 350px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 350px;
 `
 const DashboardContent = styled.div`
-	display: flex;
-	flex-direction: column;
-	row-gap: 40px;
-	padding: 15px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 15px 25px 30px;
 `
 
 const Dashboard = () => {

@@ -9,12 +9,13 @@ const WrapperWidgetTempTomorrow = styled.div`
   grid-area: 2 / 4 / 3 / 5;
 `
 
-
 const WidgetTempTomorrow = ({ tempTomorrowData }) => {
+	const isRainTomorrow = tempTomorrowData.text === 'Patchy rain possible' || tempTomorrowData.text === 'Moderate rain'
 	let backgroundWidget
+	
 	if (tempTomorrowData.text === 'Sunny') {
 		backgroundWidget = SunnyBgImage
-	} else if (tempTomorrowData === 'Patchy rain possible' || tempTomorrowData === 'Moderate rain') {
+	} else if (isRainTomorrow) {
 		backgroundWidget = RainBgImage
 	} else {
 		backgroundWidget = CloudyBgImage

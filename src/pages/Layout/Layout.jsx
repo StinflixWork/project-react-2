@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import Sidebar from '../Sidebar/Sidebar.jsx'
-import Navigation from '../Navigation/Navigation.jsx'
 import { Suspense } from 'react'
 import Loading from '../Loading/Loading.jsx'
+import { Outlet } from 'react-router-dom'
 
 const WrapperLayout = styled.div`
-	min-height: 100%;
-	overflow: clip;
-	background-color: ${({ theme }) => theme.backgroundColors.primary};
-	display: grid;
-	grid-template-columns: 100px 1fr;
+  min-height: 100%;
+  overflow: clip;
+  background-color: ${({ theme }) => theme.backgroundColors.primary};
+  display: grid;
+  grid-template-columns: 100px 1fr;
 `
 
 const Layout = () => {
@@ -18,7 +18,7 @@ const Layout = () => {
 			<Sidebar />
 			<main>
 				<Suspense fallback={<Loading />}>
-					<Navigation />
+					<Outlet />
 				</Suspense>
 			</main>
 		</WrapperLayout>

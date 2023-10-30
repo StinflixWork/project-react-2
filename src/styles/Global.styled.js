@@ -50,6 +50,7 @@ export const GlobalStyled = createGlobalStyle`
     font-family: inherit;
   }
 
+  
   button {
     cursor: pointer;
     background-color: inherit;

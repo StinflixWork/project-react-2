@@ -6,8 +6,7 @@ import { BiLogOut } from 'react-icons/bi'
 import { NavLink } from 'react-router-dom'
 
 const WrapperSidebar = styled.aside`
-  padding-top: 10px;
-  padding-bottom: 30px;
+  padding: 20px 5px 30px;
 
   nav {
     height: 100%;

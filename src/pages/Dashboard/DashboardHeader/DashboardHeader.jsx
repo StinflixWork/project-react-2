@@ -18,6 +18,7 @@ const DashboardHeader = () => {
 		setDarkIcon(!darkIcon)
 	}
 
+
 	return (
 		<DashboardHeaderStyled>
 			<DashboardHeaderUser localTime={localTime} username={fullName} />

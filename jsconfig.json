@@ -13,6 +13,9 @@
       ],
       "store/*": [
         "store/*"
+      ],
+      "utils/*": [
+        "utils/*"
       ]
     }
   }

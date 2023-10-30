@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
 	user: {},
 	fullName: '',
-	isAuthenticated: JSON.parse(localStorage.getItem('user-auth'))
+	isAuthenticated: JSON.parse(localStorage.getItem('user-auth')),
+	isRegister: false
 }
 
 const authSlice = createSlice({
@@ -20,6 +21,7 @@ const authSlice = createSlice({
 				password: user.password
 			}
 			state.fullName = user.fullName
+			state.isRegister = !state.isRegister
 		},
 		logout: (state) => {
 			state.isAuthenticated = !state.isAuthenticated

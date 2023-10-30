@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { WidgetStyled } from 'styles/DashboardWidgets.styled.js'
+import { WidgetShadowStyled } from 'styles/DashboardWidgets.styled.js'
 import TempTodayChart from './TempTodayChart/TempTodayChart.jsx'
 
 const WrapperWidgetTempToday = styled.div`
@@ -23,7 +23,7 @@ const WidgetTempContentTodayTitle = styled.div`
 const WidgetTempToday = ({ tempTodayData }) => {
 	return (
 		<WrapperWidgetTempToday>
-			<WidgetStyled>
+			<WidgetShadowStyled>
 				<WidgetTempTodayContent>
 					<WidgetTempContentTodayTitle>
 						<h2>
@@ -32,7 +32,7 @@ const WidgetTempToday = ({ tempTodayData }) => {
 					</WidgetTempContentTodayTitle>
 					<TempTodayChart tempData={tempTodayData} />
 				</WidgetTempTodayContent>
-			</WidgetStyled>
+			</WidgetShadowStyled>
 		</WrapperWidgetTempToday>
 	)
 }

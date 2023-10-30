@@ -2,7 +2,7 @@ export const themeLight = {
 	backgroundColors: {
 		primary: '#fff',
 		secondary: '#eef0f1',
-		widgetsBg: '#f5ebe0'
+		widgetsBg: '#FDFDFD'
 	},
 	textColors: {
 		title: {

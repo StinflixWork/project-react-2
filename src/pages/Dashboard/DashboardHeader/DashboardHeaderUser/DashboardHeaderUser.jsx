@@ -4,7 +4,7 @@ import {
 	DashboardHeaderUserName,
 	DashboardHeaderUserStyled
 } from './DashboardHeaderUser.styled.js'
-import { getGreetingByTime } from '../../../../utils/getGreetingByTime.js'
+import { getGreetingByTime } from 'utils/getGreetingByTime.js'
 
 const DashboardHeaderUser = ({ localTime, username }) => {
 	const greeting = getGreetingByTime(localTime)

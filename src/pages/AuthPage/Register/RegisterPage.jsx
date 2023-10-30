@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { register } from 'store/slices/authSlice.js'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import RegisterBgImage from 'assets/auth-page/registerBackground.jpg'
 import {
 	AuthFormButton,
@@ -19,11 +19,12 @@ import Logo from 'components/Logo/Logo.jsx'
 const RegisterPage = () => {
 	const [formValue, setFormValue] = useState({ fullName: '', login: '', password: '' })
 	const dispatch = useDispatch()
+	const location = useLocation()
 	const navigate = useNavigate()
 
 	function handleRegister() {
 		dispatch(register(formValue))
-		navigate('/login')
+		navigate('/login', { state: { from: location } })
 	}
 
 	return (

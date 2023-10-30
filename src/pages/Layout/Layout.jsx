@@ -9,7 +9,7 @@ const WrapperLayout = styled.div`
   overflow: clip;
   background-color: ${({ theme }) => theme.backgroundColors.primary};
   display: grid;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 110px 1fr;
 `
 
 const Layout = () => {

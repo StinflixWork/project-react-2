@@ -1,26 +1,15 @@
-import { TiWeatherStormy } from 'react-icons/ti'
 import styled from 'styled-components'
+import LogoSvg from 'assets/Logo.svg'
 
 const LogoStyled = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-
-	font-family: Arial, sans-serif;
-	font-size: 16px;
-	font-weight: 600;
-	color: #fb8500;
-
-	svg {
-		fill: #219ebc;
-	}
+  display: flex;
+  justify-content: center;
 `
 
 const Logo = () => {
 	return (
 		<LogoStyled>
-			<TiWeatherStormy size={32} />
-			WeatherSV
+			<img src={LogoSvg} alt='Logo' />
 		</LogoStyled>
 	)
 }
